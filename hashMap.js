@@ -6,9 +6,12 @@ export default () => {
     for (let i = 0; i < key.length; i++) {
       hashCode = primeNumber * hashCode + key.charCodeAt(i);
     }
-    console.log('trying')
 
     return hashCode;
+  }
+
+  const set = (key, value) => {
+    
   }
   return {
     getHash: (key) => hash(key)
