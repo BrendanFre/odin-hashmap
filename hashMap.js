@@ -2,6 +2,7 @@ export default () => {
   const hash = (key) => {
     let hashCode = 0;
     const primeNumber = 31;
+    let aMap = []
     
     for (let i = 0; i < key.length; i++) {
       hashCode = primeNumber * hashCode + key.charCodeAt(i);
@@ -11,7 +12,7 @@ export default () => {
   }
 
   const set = (key, value) => {
-    
+
   }
   return {
     getHash: (key) => hash(key)
