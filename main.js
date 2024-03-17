@@ -1,4 +1,4 @@
-import hash from './hashMap'
+import hash from './hashMap.js'
 
 const checkValidIndex = (index, buckets) => {
     if (index < 0 || index >= buckets.length) {
