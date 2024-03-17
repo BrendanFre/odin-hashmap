@@ -7,7 +7,7 @@ const checkValidIndex = (index, buckets) => {
 }
 
 
-const theMap = hash()
+const theMap = hash
 
 const newParagraph = document.createElement('p')
 
