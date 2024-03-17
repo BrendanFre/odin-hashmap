@@ -11,6 +11,6 @@ export default () => {
     return hashCode;
   }
   return {
-    getHash: (key) => hash
+    getHash: (key) => hash(key)
   }
 }

@@ -7,8 +7,11 @@ const checkValidIndex = (index, buckets) => {
 }
 
 
-const theMap = hash
+const theMap = hash()
 
 const newParagraph = document.createElement('p')
+const app = document.querySelector('.app')
 
 newParagraph.innerText = theMap.getHash('twelve')
+
+app.appendChild(newParagraph)
