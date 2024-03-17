@@ -9,5 +9,7 @@ export default () => {
 
     return hashCode;
   }
-  return {hash}
+  return {
+    getHash: (key) => hash
+  }
 }

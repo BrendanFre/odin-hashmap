@@ -11,4 +11,4 @@ const theMap = hash()
 
 const newParagraph = document.createElement('p')
 
-newParagraph.innerText = theMap.hash('twelve')
+newParagraph.innerText = theMap.getHash('twelve')
