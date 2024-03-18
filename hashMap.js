@@ -1,8 +1,9 @@
 export default () => {
+  let aMap = new Array(16)
   const hash = (key) => {
     let hashCode = 0;
     const primeNumber = 31;
-    let aMap = new Array(16)
+    
     
     for (let i = 0; i < key.length; i++) {
       hashCode = primeNumber * hashCode + key.charCodeAt(i);
@@ -12,9 +13,9 @@ export default () => {
     return hashCode;
   }
 
-  const set = (key, value) => {
+  const set = (key, value, array) => {
     const hashedKey = hash(key)
-    const bucket = hashedKey % aMap.length()
+    const bucket = hashedKey % array.length
     aMap[bucket] = value
   }
 
@@ -25,7 +26,7 @@ export default () => {
   }
   return {
     getHash: (key) => hash(key),
-    setHash: (key, value) => set(key, value),
-    getMap: () => getMap()
+    setHash: (key, value) => set(key, value, aMap),
+    getMap: () => getMap
   }
 }
