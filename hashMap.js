@@ -27,6 +27,6 @@ export default () => {
   return {
     getHash: (key) => hash(key),
     setHash: (key, value) => set(key, value, aMap),
-    getMap: () => getMap
+    getMap: () => getMap()
   }
 }
