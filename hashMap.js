@@ -15,7 +15,7 @@ export default () => {
   const set = (key, value) => {
     const hashedKey = hash(key)
     const bucket = hashedKey % aMap.length()
-    aMap[bucket] = hashedKey
+    aMap[bucket] = value
   }
   return {
     getHash: (key) => hash(key),
