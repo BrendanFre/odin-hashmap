@@ -13,6 +13,7 @@ export default () => {
 
   const set = (key, value) => {
     const hashValue = hash(key)
+    
 
   }
   return {
