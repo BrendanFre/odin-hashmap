@@ -1,5 +1,6 @@
 export default () => {
   let aMap = new Array(16)
+  
   const hash = (key) => {
     let hashCode = 0;
     const primeNumber = 31;
