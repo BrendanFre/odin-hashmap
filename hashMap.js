@@ -12,8 +12,13 @@ export default () => {
     return hashCode;
   }
 
-  const set = (key, value) => {}
+  const set = (key, value) => {
+    const hashedKey = hash(key)
+    const bucket = hashedKey % aMap.length()
+    aMap[bucket] = hashedKey
+  }
   return {
-    getHash: (key) => hash(key)
+    getHash: (key) => hash(key),
+    setHash: (key, value) => set(key, value)
   }
 }
