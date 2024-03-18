@@ -17,8 +17,15 @@ export default () => {
     const bucket = hashedKey % aMap.length()
     aMap[bucket] = value
   }
+
+  const getMap = () => {
+    for(items in aMap){
+      console.log(getMap(items));
+    }
+  }
   return {
     getHash: (key) => hash(key),
-    setHash: (key, value) => set(key, value)
+    setHash: (key, value) => set(key, value),
+    getMap: () => getMap()
   }
 }

@@ -12,6 +12,8 @@ const theMap = hash()
 const newParagraph = document.createElement('p')
 const app = document.querySelector('.app')
 
-newParagraph.innerText = theMap.getHash('twelve')
+newParagraph.innerText = theMap.setHash('twelve')
+
+console.log(theMap.getMap)
 
 app.appendChild(newParagraph)
