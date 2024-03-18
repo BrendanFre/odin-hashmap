@@ -20,9 +20,7 @@ export default () => {
   }
 
   const getMap = () => {
-    for(items in aMap){
-      console.log(getMap(items));
-    }
+    aMap.forEach(item => console.log(aMap[item]))
   }
   return {
     getHash: (key) => hash(key),
