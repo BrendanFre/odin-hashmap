@@ -18,6 +18,11 @@ export default () => {
     const bucket = hashedKey % array.length
     aMap[bucket] = value
   }
+  const get = (key, array) => {
+    const hashedKey = hash(key)
+    const bucket = hashedKey % array.length
+    
+  }
 
   const getMap = () => {
     aMap.forEach(item => console.log(aMap[item]))
