@@ -1,4 +1,4 @@
-import hash from './hashMap.js'
+import hash from './hashMap.mjs'
 
 const checkValidIndex = (index, buckets) => {
     if (index < 0 || index >= buckets.length) {
@@ -9,10 +9,7 @@ const checkValidIndex = (index, buckets) => {
 
 const theMap = hash()
 
-const hashedValue = document.createElement('p')
-const app = document.querySelector('.app')
-
-hashedValue.innerText = `The hashed value of twelve is ${theMap.getHash('first')}`
+console.log(`The hashed value of twelve is ${theMap.getHash('first')}`)
 
 theMap.setHash('first', 'twelve')
 console.log(theMap.getHash('first'))
