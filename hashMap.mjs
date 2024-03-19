@@ -23,7 +23,7 @@ export default () => {
     const bucketHash = hashedKey % array.length
     const bucket = aMap[bucketHash]
 
-    const bucketSearch = array.find(element => {
+    const bucketSearch = bucket.find(element => {
       element == hashedKey
     })
     return bucketSearch
