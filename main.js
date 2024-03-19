@@ -12,7 +12,7 @@ const theMap = hash()
 const hashedValue = document.createElement('p')
 const app = document.querySelector('.app')
 
-hashedValue.innerText = `The hashed value of twelve is ${theMap.setHash('first')}`
+hashedValue.innerText = `The hashed value of twelve is ${theMap.getHash('first')}`
 
 theMap.setHash('first', 'twelve')
 console.log(theMap.getHash('first'))
