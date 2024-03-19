@@ -19,8 +19,8 @@ export default () => {
     if(aMap[bucket] == null){
       aMap[bucket] = {hashedKey, value}
     } else if (hashedKey in aMap[bucket]){
-      aMap[bucket][hashedKey]
-    }
+      aMap[bucket][hashedKey] = value
+    } else aMap[bucket] 
     console.log(`${key} goes into the ${bucket} bucket`);
   }
 
