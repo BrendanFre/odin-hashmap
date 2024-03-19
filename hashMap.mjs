@@ -16,6 +16,9 @@ export default () => {
   const set = (key, value, array) => {
     const hashedKey = hash(key)
     const bucket = hashedKey % array.length
+    if(aMap[bucket] == null){
+      aMap[bucket] = [[hashedKey, value]]
+    }
     aMap[bucket] = {hashedKey, value}
     console.log(`${key} goes into the ${bucket} bucket`);
   }
