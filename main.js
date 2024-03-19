@@ -14,6 +14,8 @@ const app = document.querySelector('.app')
 
 newParagraph.innerText = theMap.setHash('twelve')
 
-console.log(theMap.getMap())
+theMap.setHash('first', 'twelve')
+
+console.log(theMap.getHash('first'))
 
 app.appendChild(newParagraph)

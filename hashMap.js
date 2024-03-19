@@ -22,8 +22,8 @@ export default () => {
   const get = (key, array) => {
     const hashedKey = hash(key)
     const bucket = hashedKey % array.length
-    const bucketSearch = array.find(bucket => {
-      return 
+    const bucketSearch = array.find(element => {
+      return element[bucket][0] == hashedKey
     })
     
   }
@@ -34,6 +34,7 @@ export default () => {
   return {
     getHash: (key) => hash(key),
     setHash: (key, value) => set(key, value, aMap),
-    getMap: () => getMap()
+    getMap: () => getMap(),
+    get: (key) => get(key)
   }
 }
