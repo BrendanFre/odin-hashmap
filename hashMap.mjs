@@ -46,6 +46,6 @@ export default () => {
     setHash: (key, value) => set(key, value, aMap),
     getMap: () => getMap(),
     get: (key) => get(key, aMap),
-    getBucket
+    getBucket: (index)=> getBucket(index)
   }
 }

@@ -17,3 +17,4 @@ theMap.setHash('first', 'twelve')
 console.log(theMap.get('first'));
 
 console.log(`Contents of aMap is ${theMap.getMap()}`);
+console.log(`Contents of bucket 0 is ${theMap.getBucket(0)}`);
