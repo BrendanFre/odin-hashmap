@@ -20,7 +20,7 @@ export default () => {
       aMap[bucket] = {hashedKey, value}
     } else if (hashedKey in aMap[bucket]){
       aMap[bucket][hashedKey] = value
-    } else aMap[bucket] 
+    } else aMap[bucket][hashedKey] = value
     console.log(`${key} goes into the ${bucket} bucket`);
   }
 
