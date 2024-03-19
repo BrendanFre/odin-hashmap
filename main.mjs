@@ -11,5 +11,6 @@ const theMap = hash()
 
 console.log(`The hashed value of twelve is ${theMap.hash('first')}`)
 console.log(`Contents of aMap is ${theMap.getMap()}`);
+console.log(`${theMap.getBucket(0)}`)
 theMap.setHash('first', 'twelve')
 console.log(theMap.get('first'));

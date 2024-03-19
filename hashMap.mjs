@@ -17,6 +17,11 @@ export default () => {
     const hashedKey = hash(key)
     const bucket = hashedKey % array.length
     aMap[bucket] = [hashedKey, value]
+    console.log(`${key} goes into the ${bucket} bucket`);
+  }
+
+  const getBucket = (bucket) => {
+    return aMap[bucket]
   }
   const get = (key, array) => {
     const hashedKey = hash(key)
@@ -31,12 +36,13 @@ export default () => {
   }
 
   const getMap = () => {
-    aMap.forEach(item => {return aMap[item]})
+    aMap.forEach(item => {return item})
   }
   return {
     hash: (key) => hash(key),
     setHash: (key, value) => set(key, value, aMap),
     getMap: () => getMap(),
-    get: (key) => get(key, aMap)
+    get: (key) => get(key, aMap),
+    getBucket
   }
 }
