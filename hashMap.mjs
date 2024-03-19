@@ -25,7 +25,8 @@ export default () => {
   }
 
   const getBucket = (bucket) => {
-    return Object.aMap[bucket].entries()
+    const theBucket = aMap[bucket]
+    return console.log(theBucket);
   }
   const get = (key, array) => {
     const hashedKey = hash(key)
