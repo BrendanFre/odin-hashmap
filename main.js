@@ -9,10 +9,10 @@ const checkValidIndex = (index, buckets) => {
 
 const theMap = hash()
 
-const newParagraph = document.createElement('p')
+const hashedValue = document.createElement('p')
 const app = document.querySelector('.app')
 
-newParagraph.innerText = theMap.setHash('twelve')
+hashedValue.innerText = `The hashed value of twelve is ${theMap.setHash('first')}`
 
 theMap.setHash('first', 'twelve')
 console.log(theMap.getHash('first'))
