@@ -18,8 +18,8 @@ export default () => {
     const bucket = hashedKey % array.length
     if(aMap[bucket] == null){
       aMap[bucket] = {hashedKey, value}
-    } else if (aMap[bucket][0] == hashedKey){
-      
+    } else if (hashedKey in aMap[bucket]){
+      aMap[bucket][hashedKey]
     }
     console.log(`${key} goes into the ${bucket} bucket`);
   }
