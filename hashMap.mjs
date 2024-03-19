@@ -9,7 +9,6 @@ export default () => {
     for (let i = 0; i < key.length; i++) {
       hashCode = primeNumber * hashCode + key.charCodeAt(i);
     }
-    console.log(`${key} will go in the ${hashCode % aMap.length} bucket`);
 
     return hashCode;
   }
