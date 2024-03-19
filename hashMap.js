@@ -22,6 +22,7 @@ export default () => {
   const get = (key, array) => {
     const hashedKey = hash(key)
     const bucket = hashedKey % array.length
+    const bucketSearch = array.find()
     
   }
 
