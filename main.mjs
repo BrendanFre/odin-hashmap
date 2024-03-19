@@ -9,8 +9,7 @@ const checkValidIndex = (index, buckets) => {
 
 const theMap = hash()
 
-console.log(`The hashed value of twelve is ${theMap.getHash('first')}`)
+console.log(`The hashed value of twelve is ${theMap.hash('first')}`)
 
 theMap.setHash('first', 'twelve')
-console.log(theMap.getHash('first'))
 console.log(theMap.get('first'));

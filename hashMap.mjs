@@ -35,7 +35,7 @@ export default () => {
     aMap.forEach(item => {return aMap[item]})
   }
   return {
-    getHash: (key) => hash(key),
+    hash: (key) => hash(key),
     setHash: (key, value) => set(key, value, aMap),
     getMap: () => getMap(),
     get: (key) => get(key, aMap)
