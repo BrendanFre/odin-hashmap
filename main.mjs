@@ -14,5 +14,3 @@ console.log(`The hashed value of twelve is ${theMap.getHash('first')}`)
 theMap.setHash('first', 'twelve')
 console.log(theMap.getHash('first'))
 console.log(theMap.get('first'));
-
-app.appendChild(newParagraph)

@@ -22,10 +22,10 @@ export default () => {
   const get = (key, array) => {
     const hashedKey = hash(key)
     const bucketHash = hashedKey % array.length
-    const bucket = aMap[bucket]
+    const bucket = aMap[bucketHash]
 
     const bucketSearch = array.find(element => {
-      element[bucket][0] == hashedKey
+      element == hashedKey
     })
     return bucketSearch
     
@@ -38,6 +38,6 @@ export default () => {
     getHash: (key) => hash(key),
     setHash: (key, value) => set(key, value, aMap),
     getMap: () => getMap(),
-    get: (key) => get(key)
+    get: (key) => get(key, aMap)
   }
 }
