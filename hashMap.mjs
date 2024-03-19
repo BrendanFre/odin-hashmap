@@ -17,7 +17,8 @@ export default () => {
     const hashedKey = hash(key)
     const bucket = hashedKey % array.length
     if(aMap[bucket] == null){
-      aMap[bucket] = {hashedKey, value}
+      aMap[bucket] = []
+      aMap[bucket].push({hashedKey : value})
     } else if (hashedKey in aMap[bucket]){
       aMap[bucket][hashedKey] = value
     } else aMap[bucket][hashedKey] = value
