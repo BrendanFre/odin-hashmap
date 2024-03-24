@@ -19,7 +19,7 @@ export default () => {
     const bucket = getBucket(hashedKey)
     if(aMap[bucket] == null){
       let theBucket = aMap[bucket]
-      theBucket = {}
+      theBucket.push({hashedKey: value})
       theBucket[hashedKey] = value
       console.log(`New bucket contents ${theBucket}`)
     } else if (hashedKey in aMap[bucket]){
