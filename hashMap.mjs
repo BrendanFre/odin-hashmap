@@ -14,7 +14,7 @@ export default () => {
     return hashCode;
   }
 
-  const set = (key, value, array) => {
+  const set = (key, value) => {
     const hashedKey = hash(key)
     const bucket = getBucket(hashedKey)
     if(aMap[bucket] == null){
@@ -29,7 +29,7 @@ export default () => {
   }
 
   const getBucket = (key) => {
-    
+    const hashedKey = hash(key)
     return hashedKey % aMap.length
   }
 
