@@ -16,7 +16,7 @@ export default () => {
 
   const set = (key, value, array) => {
     const hashedKey = hash(key)
-    const bucket = hashedKey % array.length
+    const bucket = getBucket(hashedKey)
     if(aMap[bucket] == null){
       let theBucket = aMap[bucket]
       theBucket = {}
@@ -28,25 +28,13 @@ export default () => {
     console.log(`${key} goes into the ${bucket} bucket`);
   }
 
-  const getBucket = (bucket) => {
-    const theBucket = aMap[bucket]
-    return console.log(theBucket);
-  }
-  const get = (key, array) => {
-    const hashedKey = hash(key)
-    const bucketHash = hashedKey % array.length
-    const bucket = aMap[bucketHash]
-
-    // const bucketSearch = bucket.find(element => {
-    //   element == hashedKey
-    // })
-    // return bucketSearch
+  const getBucket = (key) => {
     
+    return hashedKey % aMap.length
   }
 
-  const getMap = () => {
-    return aMap
-  }
+
+
   return {
     hash: (key) => hash(key),
     setHash: (key, value) => set(key, value, aMap),
