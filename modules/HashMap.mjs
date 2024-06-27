@@ -2,6 +2,7 @@ import Clear from "./Clear.mjs";
 import Get from "./Get.mjs";
 import Has from "./Has.mjs";
 import Hash from "./Hash.mjs"
+import Keys from "./Keys.mjs";
 import Length from "./Length.mjs";
 import Remove from "./Remove.mjs";
 import Set from "./Set.mjs";
@@ -51,6 +52,10 @@ export default function HashMap() {
         return Clear(theMap)
     }
 
-    return {hash, set, showMap, totaled, get, has, remove, length, clear}
+    const keys = () => {
+        return Keys(theMap)
+    }
+
+    return {hash, set, showMap, totaled, get, has, remove, length, clear, keys}
     
 };
