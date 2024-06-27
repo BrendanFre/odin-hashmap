@@ -1,4 +1,4 @@
-# The Odin Project - HashMap Projecy
+# The Odin Project - HashMap Project
 Build your own Hashmap
 
 ## Tasks
