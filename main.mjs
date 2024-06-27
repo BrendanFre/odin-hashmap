@@ -32,3 +32,7 @@ console.log(newMap.remove('Blue'));
 console.log(newMap.showMap());
 
 console.log(`The current number of keys: ${newMap.length()}`);
+
+console.log(newMap.clear());
+
+console.log(newMap.showMap());
