@@ -1,10 +1,10 @@
 import Get from "./Get.mjs";
+import Has from "./Has.mjs";
 import Hash from "./Hash.mjs"
 import Set from "./Set.mjs";
 
 export default function HashMap() {
     let theMap = []
-    const loadFactor = 0.95;
     let totalElements = 0;
     const buckets = 16
     for (let i = 0; i < 16; i++) {
@@ -13,6 +13,10 @@ export default function HashMap() {
 
     const get = (key) => {
         return Get(key, theMap)
+    }
+
+    const has = (key) => {
+        return Has(key, theMap)
     }
   
     const hash = (value) => {
@@ -32,6 +36,6 @@ export default function HashMap() {
         return totalElements
     }
 
-    return {hash, set, showMap, totaled, get}
+    return {hash, set, showMap, totaled, get, has}
     
 };

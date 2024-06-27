@@ -24,3 +24,5 @@ console.log(newMap.showMap());
 
 console.log(newMap.get('Green'));
 console.log(newMap.get('GreenS'));
+console.log(newMap.has('Green'));
+console.log(newMap.get('GreenS'));
