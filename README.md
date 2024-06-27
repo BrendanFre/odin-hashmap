@@ -9,7 +9,7 @@ Build your own Hashmap
   
   > Implemented but need to add a grow function when there is a collision.
 
-- [ ] get(key) takes one argument as a key and returns the value that is assigned to this key. If a key is not found, return null.
+- [X] get(key) takes one argument as a key and returns the value that is assigned to this key. If a key is not found, return null.
 - [ ] has(key) takes a key as an argument and returns true or false based on whether or not the key is in the hash map.
 - [ ] remove(key) takes a key as an argument. If the given key is in the hash map, it should remove the entry with that key and return true. If the key isn’t in the hash map, it should return false.
 - [ ] length() returns the number of stored keys in the hash map.

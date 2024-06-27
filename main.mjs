@@ -12,7 +12,7 @@ const newMap = HashMap()
 
 console.log(newMap.hash('tree'));
 
-newMap.set('Green', 'Green')
+newMap.set('Green', 'Not blue')
 newMap.set('Blue', 'Blue')
 newMap.set('Yellow', 'Yellow')
 newMap.showMap()
@@ -21,3 +21,6 @@ newMap.set('Green', 'Love')
 newMap.showMap()
 console.log(`Total Elements: ${newMap.totaled()}`);
 console.log(newMap.showMap());
+
+console.log(newMap.get('Green'));
+console.log(newMap.get('GreenS'));
