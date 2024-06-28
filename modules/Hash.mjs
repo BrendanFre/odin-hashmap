@@ -1,9 +1,9 @@
 export default function Hash(value) {
-    const primeNumber = 29
-    let hashCode = 0;
-    for (let i = 0; i < value.length; i++){
-        hashCode = (value.charCodeAt(i) + primeNumber * hashCode) % 16
-    }
+  let hashCode = 0;
 
-    return hashCode;    
-};
+  const primeNumber = 31;
+  for (let i = 0; i < value.length; i++) {
+    hashCode = primeNumber * hashCode + value.charCodeAt(i);
+  }
+  return hashCode;
+}
