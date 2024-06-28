@@ -14,7 +14,7 @@ Build your own Hashmap
 - [x] remove(key) takes a key as an argument. If the given key is in the hash map, it should remove the entry with that key and return true. If the key isn’t in the hash map, it should return false.
 - [x] length() returns the number of stored keys in the hash map.
 - [x] clear() removes all entries in the hash map.
-- [ ] keys() returns an array containing all the keys inside the hash map.
-- [ ] values() returns an array containing all the values.
-- [ ] entries() returns an array that contains each key, value pair. Example: [[firstKey, firstValue], [secondKey, secondValue]]
+- [x] keys() returns an array containing all the keys inside the hash map.
+- [x] values() returns an array containing all the values.
+- [x] entries() returns an array that contains each key, value pair. Example: [[firstKey, firstValue], [secondKey, secondValue]]
 

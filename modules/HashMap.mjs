@@ -6,6 +6,8 @@ import Keys from "./Keys.mjs";
 import Length from "./Length.mjs";
 import Remove from "./Remove.mjs";
 import Set from "./Set.mjs";
+import Values from "./Values.mjs";
+import Entries from "./Entries.mjs";
 
 export default function HashMap() {
     let theMap = []
@@ -56,6 +58,14 @@ export default function HashMap() {
         return Keys(theMap)
     }
 
-    return {hash, set, showMap, totaled, get, has, remove, length, clear, keys}
+    const values = () => {
+        return Values(theMap)
+    }
+
+    const entries = () => {
+        return Entries(theMap)
+    }
+
+    return {hash, set, showMap, totaled, get, has, remove, length, clear, keys, values, entries}
     
 };

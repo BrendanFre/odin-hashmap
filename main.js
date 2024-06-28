@@ -36,3 +36,12 @@ console.log(`The current number of keys: ${newMap.length()}`);
 console.log(newMap.clear());
 
 console.log(newMap.showMap());
+
+newMap.set('Green', 'Not blue')
+newMap.set('Blue', 'Blue')
+newMap.set('Orange', 'Yellow')
+
+console.log(newMap.keys());
+
+console.log(newMap.values());
+console.log(newMap.entries());
