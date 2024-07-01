@@ -5,10 +5,13 @@ export default function LinkedList(k, v, n = null) {
 
   const get = (key) => {
     return aGet(key, node)
-    
   }
 
-  return { node, get };
+  const set = (key, value) => {
+    return aSet(key, value, node)
+  }
+
+  return { node, get, set };
 }
 
 const aGet = (k, node) => {
@@ -19,3 +22,14 @@ const aGet = (k, node) => {
   } else return aGet(k, node['next'])
   
 };
+
+const aSet = (k, v, node) => {
+  if(Object.hasOwn(node, k)) {
+    node[k] = v
+    return node
+  } else if (node['next'] != null) {
+    return aSet(k, v, node['next'])
+  } else {
+    const nextNode = LinkedList(k, v).node
+    return node['next'] = nextNode}
+}
