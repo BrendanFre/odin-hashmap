@@ -1,12 +1,21 @@
 export default function LinkedList(k, v, n = null) {
-  let key = k;
-  let value = v;
-  let next = n;
+  let node = {}
+  node[k] = v
+  node['next'] = n
 
-  const Get = (key) => {
-    
+  const get = (key) => {
+    return aGet(key, node)
     
   }
 
-  return { key, value, next };
+  return { node, get };
 }
+
+const aGet = (k, node) => {
+  if(Object.hasOwn(node, k)) {
+    return node[k]
+  } else if(node['next'] == null) {
+    return false
+  } else return aGet(k, node['next'])
+  
+};

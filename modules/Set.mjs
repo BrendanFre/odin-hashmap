@@ -20,4 +20,4 @@ function isEmpty(obj) {
   } else {
     return true;
   }
-}
+}}
