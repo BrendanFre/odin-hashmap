@@ -23,6 +23,7 @@ describe("HashMap Get:", function () {
   map.set("to", "verb");
   map.set("and", "connective");
   map.set("tree", "noun");
+  console.log(map);
   it("Return the the value from the hello key", function () {
     expect(map.get("hello")).toEqual("greeting");
   });

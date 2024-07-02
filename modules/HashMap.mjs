@@ -9,7 +9,7 @@ import Set from "./Set.mjs";
 import Values from "./Values.mjs";
 import Entries from "./Entries.mjs";
 
-export default function HashMap() {
+export default function HashMap(load = 0.75) {
   let theMap = [];
   let totalElements = 0;
   const buckets = 16;
@@ -30,8 +30,8 @@ export default function HashMap() {
   };
 
   const set = (key, value) => {
-    return Set(key, value, theMap, buckets);
-    totalElements += 1;
+    return Set(key, value, theMap, buckets, load);
+    
   };
 
   const showMap = () => {

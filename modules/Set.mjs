@@ -1,8 +1,8 @@
 import Hash from "./Hash.mjs";
-import LinkedList from "./LinkedList/LinkedList.mjs";
 import Node from "./LinkedList/Node.mjs";
+import UpdateCount from "./UpdateCount.mjs";
 
-export default function Set(key, value, hashMap, buckets) {
+export default function Set(key, value, hashMap, buckets, load) {
   const keyHashed = Hash(key);
   const bucket = (keyHashed % buckets) - 1;
 
@@ -11,13 +11,13 @@ export default function Set(key, value, hashMap, buckets) {
 
   if (isEmpty(hashBucket)) {
     hashBucket["next"] = null;
+    UpdateCount(hashMap, load)
     return hashBucket[key] = value;
   } else if (hashBucket[key]) {
     return hashBucket[key] = value;
   } else {
     return hashBucket["next"] = newNode;
   }
-  return bucket;
 }
 
 function isEmpty(obj) {
