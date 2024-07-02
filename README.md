@@ -1,6 +1,8 @@
 # The Odin Project - HashMap Project
 Build your own Hashmap
 
+[![Node.js CI](https://github.com/BrendanFre/odin-hashmap/actions/workflows/nodeGithubTest.yml/badge.svg)](https://github.com/BrendanFre/odin-hashmap/actions/workflows/nodeGithubTest.yml)
+
 ## Tasks
 
 - [X] **hash(key)** takes a key and produces a hash code with it. We did implement a fairly good hash function in the previous lesson. As a reminder:
