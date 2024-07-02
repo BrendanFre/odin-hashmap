@@ -7,4 +7,7 @@
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "files.exclude": {
+        "logseq/*": true
+    },
 }
