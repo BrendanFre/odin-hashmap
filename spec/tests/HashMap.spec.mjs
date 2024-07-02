@@ -1,7 +1,7 @@
 import HashMap from "../../modules/HashMap.mjs";
 
+const map = HashMap();
 describe("HashMap Set and create functions:", function () {
-  const map = HashMap();
   it("Created new HashMap object", function () {
     expect(map.hash("hello")).toEqual(99162322);
   });
@@ -16,7 +16,7 @@ describe("HashMap Set and create functions:", function () {
 });
 
 describe("HashMap Get:", function () {
-  const map = HashMap();
+  
   map.set("hello", "greeting");
   map.set("goodbye", "farewell");
   map.set("welcome", "greeting");
@@ -28,11 +28,20 @@ describe("HashMap Get:", function () {
   });
   it("Search hashmap for key noob, should return false.", function () {
     expect(map.get("noob")).toEqual(false);
-  });
+  });})
+
+  describe("HashMap Has:", function () {
   it("HashMap.has: search for to and should return true", function () {
     expect(map.has("to")).toEqual(true);
   });
   it("HashMap.has: search for ten and should return false", function () {
     expect(map.has("ten")).toEqual(false);
+  });
+});
+
+describe("HashMap Remove:", function () {
+  it("Remove existing", function () {
+    map.remove('to')
+    expect(map.has("to")).toEqual(false);
   });
 });
