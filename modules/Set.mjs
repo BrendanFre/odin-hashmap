@@ -10,12 +10,12 @@ export default function Set(key, value, hashMap, buckets) {
   const hashBucket = hashMap[bucket];
 
   if (isEmpty(hashBucket)) {
-    hashBucket[key] = value;
     hashBucket["next"] = null;
+    return hashBucket[key] = value;
   } else if (hashBucket[key]) {
-    hashBucket[key] = value;
+    return hashBucket[key] = value;
   } else {
-    hashBucket["next"] = newNode;
+    return hashBucket["next"] = newNode;
   }
   return bucket;
 }

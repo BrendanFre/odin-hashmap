@@ -17,12 +17,9 @@ describe("Linked List", function () {
   it('Update the "tree" value to "pine"', function () {
     expect(list.set("tree", "pine")).toEqual({ tree: "pine", next: null });
   });
-  // it("Create a new node and attach the key animal with value cat", function () {
-  //   const d = list.set("animal", "cat");
-  //   expect(d).toEqual({ animal: "cat", next: null });
-  //   expect(list.node).toEqual({
-  //     tree: "pine",
-  //     next: { animal: "cat", next: null },
-  // //   });
-  // });
-});
+  it("Create a new node and attach the key animal with value cat", function () {
+    const d = list.set("animal", "cat");
+    expect(d).toEqual({ animal: "cat", next: null });
+    });
+  });
+;

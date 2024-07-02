@@ -25,18 +25,12 @@ const aGet = (k, node) => {
 };
 
 const aSet = (k, v, node) => {
-  if (node != {}) {
-    for (const key in node) {
-      if (key == k) {
-        node[key] = v;
-        return node;
-      }
-    }
+  if (k in node) {
+    node[k] = v;
+    return node
   } else if (node["next"] != null) {
-    console.log(`next exists`);
     return aSet(k, v, node["next"]);
   } else {
-    console.log(node);
     return (node = Node(k, v));
   }
 };
