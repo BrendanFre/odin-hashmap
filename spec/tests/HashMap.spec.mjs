@@ -40,8 +40,16 @@ describe("HashMap Get:", function () {
 });
 
 describe("HashMap Remove:", function () {
-  it("Remove existing", function () {
-    map.remove('to')
-    expect(map.has("to")).toEqual(false);
+  let testWord;
+  afterEach(function(){
+    expect(map.has(testWord)).toBe(false)
+  })
+  it("Remove existing key 'to', it should return true", function () {
+    testWord = 'to'
+    expect(map.remove(testWord)).toEqual(true);
+  });
+  it("Remove existing key 'trollop', it should return false", function () {
+    testWord = 'trollop'
+    expect(map.remove(testWord)).toEqual(false);
   });
 });

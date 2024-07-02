@@ -14,7 +14,7 @@ export default function Remove(key, arr) {
   } else if (myBucket["next"] == null) {
     return false;
   } else {
-    arr = Remove(key, myBucket["next"]);
+    return Remove(key, myBucket["next"]);
   }
 }
 
@@ -23,6 +23,7 @@ const Cleanse = (node) => {
     for (const prop in node) {
         delete node[prop]
       }
+      return true
     } else {
     const {key, next} = node['next']
     console.log(key + next);
