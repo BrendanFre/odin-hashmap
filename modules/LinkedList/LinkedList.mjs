@@ -1,35 +1,37 @@
+import Node from "./Node.mjs";
+
 export default function LinkedList(k, v, n = null) {
-  let node = {}
-  node[k] = v
-  node['next'] = n
+  let node = {};
+  node[k] = v;
+  node["next"] = n;
 
   const get = (key) => {
-    return aGet(key, node)
-  }
+    return aGet(key, node);
+  };
 
   const set = (key, value) => {
-    return aSet(key, value, node)
-  }
+    return aSet(key, value, node);
+  };
 
   return { node, get, set };
 }
 
 const aGet = (k, node) => {
-  if(Object.hasOwn(node, k)) {
-    return node[k]
-  } else if(node['next'] == null) {
-    return false
-  } else return aGet(k, node['next'])
-  
+  if (Object.hasOwn(node, k)) {
+    return node[k];
+  } else if (node["next"] == null) {
+    return false;
+  } else return aGet(k, node["next"]);
 };
 
 const aSet = (k, v, node) => {
-  if(Object.hasOwn(node, k)) {
-    node[k] = v
-    return node
-  } else if (node['next'] != null) {
-    return aSet(k, v, node['next'])
+  let newNode = Node(k, v);
+  if (Object.hasOwn(node, k)) {
+    node[k] = v;
+    return node;
+  } else if (node["next"] != null) {
+    return aSet(k, v, node["next"]);
   } else {
-    const nextNode = LinkedList(k, v).node
-    return node['next'] = nextNode}
-}
+    return (node["next"] = newNode);
+  }
+};

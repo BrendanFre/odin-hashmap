@@ -30,7 +30,7 @@ export default function HashMap() {
   };
 
   const set = (key, value) => {
-    Set(key, value, theMap, buckets);
+    return Set(key, value, theMap, buckets);
     totalElements += 1;
   };
 
@@ -79,6 +79,6 @@ export default function HashMap() {
     keys,
     values,
     entries,
-    theMap
+    theMap,
   };
 }
