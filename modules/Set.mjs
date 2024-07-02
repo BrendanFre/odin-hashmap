@@ -1,20 +1,21 @@
 import Hash from "./Hash.mjs";
 import LinkedList from "./LinkedList/LinkedList.mjs";
+import Node from "./LinkedList/Node.mjs";
 
 export default function Set(key, value, hashMap, buckets) {
   const keyHashed = Hash(key);
   const bucket = (keyHashed % buckets) - 1;
 
-  const newNode = LinkedList(key, value);
+  const newNode = Node(key, value);
   const hashBucket = hashMap[bucket];
 
   if (isEmpty(hashBucket)) {
     hashBucket[key] = value;
     hashBucket["next"] = null;
-  } else if (hashBucket[0]["key"] == key) {
-    hashBucket[0]["value"] = value;
+  } else if (hashBucket[key]) {
+    hashBucket[key] = value;
   } else {
-    hashBucket[0][next] = newNode;
+    hashBucket["next"] = newNode;
   }
   return bucket;
 }
