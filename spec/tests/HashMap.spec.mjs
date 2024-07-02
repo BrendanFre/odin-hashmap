@@ -23,11 +23,16 @@ describe("HashMap Get:", function () {
   map.set("to", "verb");
   map.set("and", "connective");
   map.set("tree", "noun");
-  console.log(map);
   it("Return the the value from the hello key", function () {
     expect(map.get("hello")).toEqual("greeting");
   });
   it("Search hashmap for key noob, should return false.", function () {
     expect(map.get("noob")).toEqual(false);
+  });
+  it("HashMap.has: search for to and should return true", function () {
+    expect(map.has("to")).toEqual(true);
+  });
+  it("HashMap.has: search for ten and should return false", function () {
+    expect(map.has("ten")).toEqual(false);
   });
 });
