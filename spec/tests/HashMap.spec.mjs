@@ -70,3 +70,16 @@ describe("Hashmap Length:", function () {
     expect(newMap.length()).toBe(6);
   });
 });
+
+describe("Hashmap Clear:", function () {
+  const newMap = HashMap();
+  it("Add keys, then clear all data", function () {
+    newMap.set("ice", "white");
+    newMap.set("ice cream", "white");
+    newMap.set("jacket", "blue");
+    newMap.set("kite", "pink");
+    newMap.set("lion", "golden");
+    newMap.clear();
+    expect(newMap.length()).toBe(0);
+  });
+});
