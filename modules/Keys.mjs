@@ -1,9 +1,17 @@
 export default function Keys(arr) {
   let keyList = [];
   arr.forEach((object) => {
-    for (const key in object) {
-      if (Object.hasOwnProperty.call(object, key)) {
-        keyList.push(key);
+    if (Object.keys(object).length == 0) {
+      return;
+    } else {
+      const objKeys = Object.keys(object);
+      objKeys.forEach((element) => {
+        if (element != "next") {
+          keyList.push(element);
+        }
+      });
+      if (object["next"] != null) {
+        return keyList.push(Keys(object["next"]));
       }
     }
   });

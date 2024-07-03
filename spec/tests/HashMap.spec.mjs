@@ -83,3 +83,49 @@ describe("Hashmap Clear:", function () {
     expect(newMap.length()).toBe(0);
   });
 });
+
+describe("Hashmap Keys:", function () {
+  const newMap = HashMap();
+  let expected = ["ice", "lion", "ice cream", "jacket", "kite"];
+  it("Add keys, then return list of keys", function () {
+    newMap.set("ice", "white");
+    newMap.set("ice cream", "white");
+    newMap.set("jacket", "blue");
+    newMap.set("kite", "pink");
+    newMap.set("lion", "golden");
+    expect(newMap.keys()).toEqual(expected);
+  });
+  it("Add keys, then return list of keys", function () {
+    expected = ["Land Rover", "Vauxhall", "Ferrari"];
+    const carMap = HashMap();
+    carMap.set("Vauxhall", "Corsa");
+    carMap.set("Ferrari", "F50");
+    carMap.set("Land Rover", "Discovery");
+    expect(carMap.keys()).toEqual(expected);
+  });
+});
+
+describe("Hashmap Values:", function () {
+  const newMap = HashMap();
+  let expected = ["white", "blue", "white", "pink", "golden"];
+  it("Add keys, then return list of keys", function () {
+    newMap.set("ice", "white");
+    newMap.set("ice cream", "white");
+    newMap.set("jacket", "blue");
+    newMap.set("kite", "pink");
+    newMap.set("lion", "golden");
+    expect(newMap.values().sort()).toEqual(
+      jasmine.arrayWithExactContents(expected)
+    );
+  });
+  it("Add keys, then return list of keys", function () {
+    expected = ["Corsa", "F50", "Discovery"];
+    const carMap = HashMap();
+    carMap.set("Vauxhall", "Corsa");
+    carMap.set("Ferrari", "F50");
+    carMap.set("Land Rover", "Discovery");
+    expect(carMap.values().sort()).toEqual(
+      jasmine.arrayWithExactContents(expected)
+    );
+  });
+});
