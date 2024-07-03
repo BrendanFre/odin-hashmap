@@ -5,18 +5,17 @@ import UpdateCount from "./UpdateCount.mjs";
 export default function Set(key, value, hashMap, buckets, load) {
   const keyHashed = Hash(key);
   const bucket = (keyHashed % buckets) - 1;
-
   const newNode = Node(key, value);
   const hashBucket = hashMap[bucket];
 
   if (isEmpty(hashBucket)) {
     hashBucket["next"] = null;
-    UpdateCount(hashMap, load)
-    return hashBucket[key] = value;
+    UpdateCount(hashMap, load);
+    return (hashBucket[key] = value);
   } else if (hashBucket[key]) {
-    return hashBucket[key] = value;
+    return (hashBucket[key] = value);
   } else {
-    return hashBucket["next"] = newNode;
+    return (hashBucket["next"] = newNode);
   }
 }
 

@@ -55,13 +55,18 @@ describe("HashMap Remove:", function () {
 });
 
 describe("Hashmap Length:", function () {
+  const newMap = HashMap();
   it("Calculate length after adding keys", function () {
-    const newMap = HashMap();
     newMap.set("ice", "white");
     newMap.set("ice cream", "white");
     newMap.set("jacket", "blue");
     newMap.set("kite", "pink");
     newMap.set("lion", "golden");
     expect(newMap.length()).toBe(5);
+  });
+  it("Calculate length adding additional keys", function () {
+    newMap.set("tomato", "red");
+
+    expect(newMap.length()).toBe(6);
   });
 });

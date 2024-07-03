@@ -8,14 +8,17 @@ import Remove from "./Remove.mjs";
 import Set from "./Set.mjs";
 import Values from "./Values.mjs";
 import Entries from "./Entries.mjs";
+import CheckLoadFactor from "./CheckLoadFactor.mjs";
 
 export default function HashMap(load = 0.75) {
   let theMap = [];
   let totalElements = 0;
-  const buckets = 16;
+
   for (let i = 0; i < 16; i++) {
     theMap.push({});
   }
+
+  let buckets = theMap.length;
 
   const get = (key) => {
     return Get(key, theMap);
@@ -30,8 +33,8 @@ export default function HashMap(load = 0.75) {
   };
 
   const set = (key, value) => {
+    buckets = CheckLoadFactor(load, buckets, Length(theMap));
     return Set(key, value, theMap, buckets, load);
-    
   };
 
   const showMap = () => {
