@@ -1,12 +1,19 @@
-export default function Vakues(arr) {
-    let keyList = [];
-    arr.forEach((object) => {
-      for (const key in object) {
-        if (Object.hasOwnProperty.call(object, key)) {
-          keyList.push(`${key} : ${object[key]}`);
+export default function Entries(arr) {
+  let entryList = [];
+  arr.forEach((object) => {
+    if (Object.keys(object).length == 0) {
+      return;
+    } else {
+      const objKeys = Object.keys(object);
+      objKeys.forEach((element) => {
+        if (element != "next") {
+          entryList.push([element, object[element]]);
         }
+      });
+      if (object["next"] != null) {
+        return entryList.push(Entries(object["next"]));
       }
-    });
-    return keyList;
-  }
-  
+    }
+  });
+  return entryList;
+}

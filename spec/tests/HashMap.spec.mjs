@@ -129,3 +129,36 @@ describe("Hashmap Values:", function () {
     );
   });
 });
+
+describe("Hashmap Entries:", function () {
+  const newMap = HashMap();
+  let expected = [
+    ["ice", "white"],
+    ["ice cream", "white"],
+    ["jacket", "blue"],
+    ["kite", "pink"],
+    ["lion", "golden"],
+  ];
+  it("Add keys, then return list of keys", function () {
+    newMap.set("ice", "white");
+    newMap.set("ice cream", "white");
+    newMap.set("jacket", "blue");
+    newMap.set("kite", "pink");
+    newMap.set("lion", "golden");
+    expect(newMap.entries().sort()).toEqual(
+      jasmine.arrayWithExactContents(expected)
+    );
+  });
+  it("Add keys, then return list of entries", function () {
+    let expected = [
+      ["Vauxhall", "Corsa"],
+      ["Ferrari", "F50"],
+      ["Land Rover", "Discovery"],
+    ];
+    const carMap = HashMap();
+    carMap.set("Vauxhall", "Corsa");
+    carMap.set("Ferrari", "F50");
+    carMap.set("Land Rover", "Discovery");
+    expect(carMap.entries()).toEqual(jasmine.arrayWithExactContents(expected));
+  });
+});

@@ -9,6 +9,7 @@ import Set from "./Set.mjs";
 import Values from "./Values.mjs";
 import Entries from "./Entries.mjs";
 import CheckLoadFactor from "./CheckLoadFactor.mjs";
+import BucketSize from "./BucketSize.mjs";
 
 export default function HashMap(load = 0.75) {
   let theMap = [];
@@ -20,6 +21,9 @@ export default function HashMap(load = 0.75) {
 
   let buckets = theMap.length;
 
+  const bucketSize = () => {
+    return BucketSize(theMap);
+  };
   const get = (key) => {
     return Get(key, theMap);
   };
@@ -33,7 +37,7 @@ export default function HashMap(load = 0.75) {
   };
 
   const set = (key, value) => {
-    buckets = CheckLoadFactor(load, buckets, Length(theMap));
+    CheckLoadFactor(load, buckets, theMap);
     return Set(key, value, theMap, buckets, load);
   };
 
@@ -83,5 +87,6 @@ export default function HashMap(load = 0.75) {
     values,
     entries,
     theMap,
+    bucketSize,
   };
 }
