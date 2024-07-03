@@ -7,7 +7,7 @@ describe("HashMap Set and create functions:", function () {
   });
   it("Set many keys and pairs", function () {
     const hello = map.set("hello", "greeting");
-    expect(hello).toEqual('greeting');
+    expect(hello).toEqual("greeting");
   });
   it("Check hello's bucket", function () {
     const mappy = map.theMap[1]["hello"];
@@ -16,7 +16,6 @@ describe("HashMap Set and create functions:", function () {
 });
 
 describe("HashMap Get:", function () {
-  
   map.set("hello", "greeting");
   map.set("goodbye", "farewell");
   map.set("welcome", "greeting");
@@ -28,9 +27,10 @@ describe("HashMap Get:", function () {
   });
   it("Search hashmap for key noob, should return false.", function () {
     expect(map.get("noob")).toEqual(false);
-  });})
+  });
+});
 
-  describe("HashMap Has:", function () {
+describe("HashMap Has:", function () {
   it("HashMap.has: search for to and should return true", function () {
     expect(map.has("to")).toEqual(true);
   });
@@ -41,15 +41,27 @@ describe("HashMap Get:", function () {
 
 describe("HashMap Remove:", function () {
   let testWord;
-  afterEach(function(){
-    expect(map.has(testWord)).toBe(false)
-  })
+  afterEach(function () {
+    expect(map.has(testWord)).toBe(false);
+  });
   it("Remove existing key 'to', it should return true", function () {
-    testWord = 'to'
+    testWord = "to";
     expect(map.remove(testWord)).toEqual(true);
   });
   it("Remove existing key 'trollop', it should return false", function () {
-    testWord = 'trollop'
+    testWord = "trollop";
     expect(map.remove(testWord)).toEqual(false);
+  });
+});
+
+describe("Hashmap Length:", function () {
+  it("Calculate length after adding keys", function () {
+    const newMap = HashMap();
+    newMap.set("ice", "white");
+    newMap.set("ice cream", "white");
+    newMap.set("jacket", "blue");
+    newMap.set("kite", "pink");
+    newMap.set("lion", "golden");
+    expect(newMap.length()).toBe(5);
   });
 });
