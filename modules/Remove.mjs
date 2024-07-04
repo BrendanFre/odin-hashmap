@@ -7,26 +7,14 @@ export default function Remove(key, arr) {
     const hashed = Hash(key);
     myBucket = GetBucket(arr, arr.length, hashed);
   } else myBucket = arr;
-  if (key in myBucket) {
-    return Cleanse(myBucket)
-  } else if (myBucket == {}) {
+
+  if (Object.hasOwn(myBucket, key)) {
+    return delete myBucket[key];
+  } else if (Object.keys(myBucket).length == 0) {
     return false;
   } else if (myBucket["next"] == null) {
     return false;
   } else {
     return Remove(key, myBucket["next"]);
   }
-}
-
-const Cleanse = (node) => {
-  if(node['next'] == null) {
-    for (const prop in node) {
-        delete node[prop]
-      }
-      return true
-    } else {
-    const {key, next} = node['next']
-    console.log(key + next);
-  }
-  
 }

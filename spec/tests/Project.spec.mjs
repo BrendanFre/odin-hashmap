@@ -16,7 +16,7 @@
 //     test.set("jacket", "blue");
 //     test.set("kite", "pink");
 //     test.set("lion", "golden");
-//     console.log(test.keys());
+//     // console.log(test.theMap);
 //     expect(test.length()).toBe(12);
 //   });
 //   it("Overwrite carrot's value with crunchy", function () {
@@ -26,12 +26,12 @@
 //   it("Overwrite lion's value with cat", function () {
 //     test.set("lion", "cat");
 //     expect(test.get("lion")).toBe("cat");
-//   });
+//   });})
 
-//   it("Expand the map by one bucket", function () {
-//     expect(test.bucketSize()).toBe(15);
-//     test.set("moon", "silver");
-//     test.set("sun", "orange");
-//     expect(test.bucketSize()).toBe(16);
-//   });
-// });
+// //   it("Expand the map by one bucket", function () {
+// //     expect(test.bucketSize()).toBe(15);
+// //     test.set("moon", "silver");
+// //     test.set("sun", "orange");
+// //     expect(test.bucketSize()).toBe(16);
+// //   });
+// // });

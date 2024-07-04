@@ -11,9 +11,9 @@ export default function Keys(arr) {
             keyList.push(element);
           }
         });
-        if (object["next"] != null) {
-          console.log(Keys(object["next"]));
-        }
+        // if (object["next"] != null) {
+        //   console.log(Keys(object["next"]));
+        // }
       }
     });
   } else {
@@ -26,5 +26,3 @@ export default function Keys(arr) {
   }
   return keyList;
 }
-
-const getObjectKeys = (params) => {};

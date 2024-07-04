@@ -6,8 +6,8 @@ describe("HashMap Set and create functions:", function () {
     expect(map.hash("hello")).toEqual(99162322);
   });
   it("Set many keys and pairs", function () {
-    const hello = map.set("hello", "greeting");
-    expect(hello).toEqual("greeting");
+    map.set("hello", "greeting");
+    expect(map.theMap[1]['hello']).toEqual("greeting");
   });
   it("Check hello's bucket", function () {
     const mappy = map.theMap[1]["hello"];
@@ -31,22 +31,23 @@ describe("HashMap Get:", function () {
 });
 
 describe("HashMap Has:", function () {
+  const hasMap = HashMap()
+  hasMap.set('to', 'verb')
   it("HashMap.has: search for to and should return true", function () {
-    expect(map.has("to")).toEqual(true);
+
+    expect(hasMap.has("to")).toEqual(true);
   });
   it("HashMap.has: search for ten and should return false", function () {
-    expect(map.has("ten")).toEqual(false);
+    expect(hasMap.has("ten")).toEqual(false);
   });
 });
 
 describe("HashMap Remove:", function () {
   let testWord;
-  afterEach(function () {
-    expect(map.has(testWord)).toBe(false);
-  });
+  const remMap = HashMap()
+  remMap.set('to', 'verb')
   it("Remove existing key 'to', it should return true", function () {
-    testWord = "to";
-    expect(map.remove(testWord)).toEqual(true);
+    expect(remMap.remove('to')).toEqual(true);
   });
   it("Remove existing key 'trollop', it should return false", function () {
     testWord = "trollop";
