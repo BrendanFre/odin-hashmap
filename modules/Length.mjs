@@ -13,13 +13,12 @@ export default function Length(arr) {
 const lengthObj = (object) => {
   let keyCount = 0
   for (const key in object) {
-    if(key == 'hat'){
-      console.log('inner');
-    }
-    if (key != 'next'){
-      keyCount += 1
-    } else if(object[key] != null){
-      return keyCount = keyCount + Length(object[key])
+    if (object[key] !=null){
+      if(key != 'next'){
+        keyCount++
+      } else if (key == 'next') {
+      keyCount += lengthObj(object[key])
+      }
     }
     }
   return keyCount

@@ -8,7 +8,6 @@ import Remove from "./Remove.mjs";
 import Set from "./Set.mjs";
 import Values from "./Values.mjs";
 import Entries from "./Entries.mjs";
-import CheckLoadFactor from "./CheckLoadFactor.mjs";
 import BucketSize from "./BucketSize.mjs";
 
 export default function HashMap(load = 0.75) {
@@ -37,7 +36,6 @@ export default function HashMap(load = 0.75) {
   };
 
   const set = (key, value) => {
-    CheckLoadFactor(load, buckets, theMap);
     return Set(key, value, theMap, buckets, load);
   };
 
