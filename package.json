@@ -1,12 +1,12 @@
 {
   "name": "odin-hashmap",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Build your own Hashmap",
   "main": "main.mjs",
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "test": "jasmine",
+    "test": "clear && jasmine",
     "release": "standard-version",
     "lint": "eslint *.js modules/*.mjs",
     "lint:fix": "eslint --fix --ext .js ."
