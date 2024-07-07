@@ -31,6 +31,6 @@ const aSet = (k, v, node) => {
   } else if (node["next"] != null) {
     return aSet(k, v, node["next"]);
   } else {
-    return (node = Node(k, v));
+    return (Node(k, v));
   }
 };

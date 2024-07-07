@@ -8,7 +8,7 @@
     "prepare": "husky",
     "test": "clear && jasmine",
     "release": "standard-version",
-    "lint": "eslint *.js modules/*.mjs",
+    "lint": "eslint *.js src/*.mjs",
     "lint:fix": "eslint --fix --ext .js ."
   },
   "keywords": [],

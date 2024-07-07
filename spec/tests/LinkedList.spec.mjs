@@ -1,4 +1,4 @@
-import LinkedList from "../../modules/LinkedList/LinkedList.mjs";
+import LinkedList from "../../src/LinkedList/LinkedList.mjs";
 
 describe("Linked List", function () {
   const list = LinkedList("tree", "oak");
@@ -22,4 +22,4 @@ describe("Linked List", function () {
     expect(d).toEqual({ animal: "cat", next: null });
     });
   });
-;
+

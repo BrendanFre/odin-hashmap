@@ -1,12 +1,12 @@
 export default function Entries(arr) {
   let entryList = [];
   arr.forEach((object) => {
-    if (Object.keys(object).length == 0) {
-      return;
+    if (Object.keys(object).length === 0) {
+
     } else {
       const objKeys = Object.keys(object);
       objKeys.forEach((element) => {
-        if (element != "next") {
+        if (element !== "next") {
           entryList.push([element, object[element]]);
         }
       });

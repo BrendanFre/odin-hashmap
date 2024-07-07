@@ -14,9 +14,9 @@ const lengthObj = (object) => {
   let keyCount = 0
   for (const key in object) {
     if (object[key] !=null){
-      if(key != 'next'){
+      if(key !== 'next'){
         keyCount++
-      } else if (key == 'next') {
+      } else if (key === 'next') {
       keyCount += lengthObj(object[key])
       }
     }

@@ -1,4 +1,4 @@
-import HashMap from "../../modules/HashMap.mjs";
+import HashMap from "../../src/HashMap.mjs";
 
 const map = HashMap();
 describe("HashMap Set and create functions:", function () {

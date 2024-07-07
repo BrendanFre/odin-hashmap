@@ -11,7 +11,7 @@ export default function Get(key, arr) {
 
   if (Object.hasOwn(myBucket, key)) {
     return true;
-  } else if (Object.keys(myBucket).length == 0) {
+  } else if (Object.keys(myBucket).length === 0) {
     return false;
   } else if (myBucket["next"] == null) {
     return false;

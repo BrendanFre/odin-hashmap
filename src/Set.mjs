@@ -10,10 +10,7 @@ export default function Set(key, value, hashMap, buckets, load) {
       // console.log(`Empty bucket adding key pair`);
       hashBucket["next"] = null;
       return (hashBucket[key] = value);
-    } else {
-      // console.log(`Bucket is not empty`);
-      return Set(key, value, hashBucket, buckets, load);
-    }
+    } else updateObject(hashBucket, key,value)
   } else if (typeof hashMap == "object") {
     if (Object.hasOwn(hashMap, key)) {
       return (hashMap[key] = value);
@@ -36,9 +33,19 @@ export default function Set(key, value, hashMap, buckets, load) {
 
 function isEmpty(obj) {
   const size = Object.keys(obj);
-  if (size.length > 0) {
-    return false;
-  } else {
-    return true;
+  return size.length <= 0;
+}
+
+const updateObject = (object, k, v) => {
+  for (const objectKey in object) {
+    if (objectKey !== 'next') {
+      if(objectKey === k) {
+        object[objectKey] = v;
+      } else if(object['next'] == null) {
+        const newNode = {'next': null,}
+        newNode[k] = v;
+        object['next'] = newNode
+      } else updateObject(object['next'], k, v);
+    }
   }
 }
