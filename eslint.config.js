@@ -1,6 +1,7 @@
 import pluginJs from "@eslint/js";
 
 export default [
+  linked-list
   {
     languageOptions: {
       globals: {
