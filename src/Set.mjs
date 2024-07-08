@@ -1,4 +1,4 @@
-import Hash from "./Hash.mjs";
+import Hash from './Hash.mjs'
 
 export default function Set(key, value, hashMap, buckets, load) {
   // console.log(hashMap);
@@ -49,3 +49,4 @@ const updateObject = (object, k, v) => {
     }
   }
 }
+

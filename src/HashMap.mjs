@@ -1,14 +1,15 @@
-import Clear from "./Clear.mjs";
-import Get from "./Get.mjs";
-import Has from "./Has.mjs";
-import Hash from "./Hash.mjs";
-import Keys from "./Keys.mjs";
-import Length from "./Length.mjs";
-import Remove from "./Remove.mjs";
-import Set from "./Set.mjs";
-import Values from "./Values.mjs";
-import Entries from "./Entries.mjs";
-import BucketSize from "./BucketSize.mjs";
+import Clear from './Clear.mjs'
+import Get from './Get.mjs'
+import Has from './Has.mjs'
+import Hash from './Hash.mjs'
+import Keys from './Keys.mjs'
+import Length from './Length.mjs'
+import Remove from './Remove.mjs'
+import Set from './Set.mjs'
+import Values from './Values.mjs'
+import Entries from './Entries.mjs'
+import BucketSize from './BucketSize.mjs'
+import Grow from './Grow.mjs'
 
 export default function HashMap(load = 0.75) {
   let theMap = [];
@@ -36,6 +37,7 @@ export default function HashMap(load = 0.75) {
   };
 
   const set = (key, value) => {
+    theMap = Grow(theMap, load)
     return Set(key, value, theMap, buckets, load);
   };
 
