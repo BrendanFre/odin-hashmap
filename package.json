@@ -24,7 +24,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.4.0",
-    "globals": "^15.8.0",
+    "globals": "^15.9.0",
     "husky": "^9.0.11",
     "jasmine": "^5.1.0",
     "lint-staged": "^10.5.4",
